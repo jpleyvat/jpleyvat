@@ -1,27 +1,113 @@
-fontColor = black
-primaryColor = gray
+fontColor = #1D1D1D
+// primaryColor = gray
+primaryColor = #2BBBAD
+whiteColor = white
 
 *, *:before, *:after 
   list-style: none
 
-// body
-
 nav 
+  height: 150px
   font-size: 20px
   background-color: primaryColor
 
-header 
-  margin-top: 10vh 
-  text-align: center
-  border: black 1px solid 
 a
-  color: white
+  color: whiteColor
   text-decoration: none
 
-section 
+section
   padding-top: 10vh
-  
-  & .container
-    height: 70vh
-    border: black 1px solid
-    border-radius: 10px
+
+footer
+  // position: absolute
+  // top: 80%
+  width: 100%
+  background-color: primaryColor
+  margin-top: 10vh
+
+.container 
+  max-width: 1000px
+  flex: 1
+  margin: 0 auto
+  display: inherit
+  justify-content: inherit
+  align-items: inherit
+  height: inherit
+  flex-wrap: inherit
+
+.who-am-i
+  height: fit-content
+  position: relative
+  display: flex
+  // align-items: center
+  // justify-content: space-between
+  // flex-wrap: wrap
+  overflow: hidden
+  padding: 10em
+  & h2
+    text-shadow: -1px 0 1px #848383, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black
+    z-index: 2
+    color: whiteColor
+    & strong 
+      color: primaryColor
+      
+
+.who-am-i-image
+  object-fit: cover
+  opacity: 0.5
+  position: absolute
+  z-index: 1
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+
+.what-have-i-done
+  display: flex
+
+  & .item
+    width: 20%
+    height: fit-content
+    margin: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    // padding: 2em
+    border: primaryColor 5px solid 
+    border-radius: 15px
+    // display: inline-block
+
+.contact 
+  // background-color: #056fff
+  color: white
+  height: 150px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+
+
+
+
+.social-link 
+  display: inline-block
+  width: 50px
+  height: 50px
+  margin: 0 10px
+  background-size: 50px 50px
+
+
+
+.social-link.twitter 
+  background-image: url('/../../images/twitter.svg')
+
+.social-link.facebook 
+  background-image: url('/../../images/facebook.svg')
+
+.social-link.github 
+  background-image: url('/../../images/github.svg')
+
+.social-link.instagram 
+  background-image: url('/../../images/instagram.svg')
