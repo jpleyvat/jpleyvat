@@ -13,6 +13,9 @@ document.addEventListener('wheel', function (event) {
             scrollDown();
     }
 });
+document.addEventListener('touchmove', function (event) {
+    console.log(event);
+});
 function scrollUp() {
     var initialPosition = getpPropertyValue(container.style.bottom);
     if (container.style.bottom != '' &&
