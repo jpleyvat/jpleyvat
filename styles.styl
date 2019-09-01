@@ -1,0 +1,73 @@
+*
+  color: white
+  font-size: 24px
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background-color: black
+  height: 100vh
+  overflow: hidden
+  position: relative
+  width: 100%
+
+img 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+.container
+  bottom: 0
+  height: 100vh
+  position: relative
+  width: 100%
+
+.page
+  align-items: center
+  display: grid
+  grid-template-columns:  \[col1\] 1fr \[col2\]  \[col3\]
+  grid-template-rows: 1fr \[row1\] 1fr \[row2\] 1fr \[row3\] 
+  grid-template-areas: ". . . " ". mid . " ". . . "
+  height: 100vh
+  justify-items: center
+  position: absolute
+  width: 100%
+  &:nth-child(1)
+    background-image: linear-gradient(#000000, #0E0D3B)
+  &:nth-child(2)
+    background-image: linear-gradient(#0E0D3B, #2E1C54)
+  &:nth-child(3)
+    background-image: linear-gradient(#2E1C54, #2D132C)
+  &:nth-child(4)
+    background-image: linear-gradient(#2D132C, #801336)
+  &:nth-child(5)
+    background-image: linear-gradient( #801336, #C72C41)
+  &:nth-child(6)
+    background-image: linear-gradient( #C72C41, #EE4540)
+
+  & .brand
+    grid-area: mid
+    &>*
+      text-align: center
+    & img 
+      margin-top: 2rem
+      max-height: 1rem
+      &#arrow
+        animation-duration: 2s
+        animation-iteration-count: infinite
+        animation-name: bounce
+        animation-timing-function: ease-out
+    & h6
+      font-weight: lighter
+      font-size: .5rem
+
+
+@keyframes bounce 
+  0%
+    transform: translate(0px, 0px)
+  50%
+    transform: translate(0px, 5px)
+  100%
+    transform: translate(0px, 0px)
+
