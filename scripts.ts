@@ -14,6 +14,10 @@ document.addEventListener('wheel', event => {
 	}
 });
 
+document.addEventListener('touchmove', event => {
+	console.log(event);
+});
+
 function scrollUp() {
 	let initialPosition = getpPropertyValue(container.style.bottom);
 	if (
