@@ -1,80 +1,126 @@
 *
-  color: white
-  font-size: 24px
-  margin: 0
-  padding: 0
-  box-sizing: border-box
+  box-sizing border-box
+  color white
+  font-size 3vw
+  margin 0
+  padding 0
+  text-align center
 
 body
-  background-color: black
-  height: 100vh
-  overflow: hidden
-  position: relative
-  width: 100%
-
-img 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height 100vh
+  overflow hidden
+  position relative
+  width 100%
 
 .container
-  bottom: 0
-  height: 100vh
-  position: relative
-  width: 100%
-
+  bottom 0
+  height 100vh
+  position relative
+  width 100%
+  
 .page
-  align-items: center
-  display: grid
-  grid-template-columns:  \[col1\] 1fr \[col2\]  \[col3\]
-  grid-template-rows: 1fr \[row1\] 1fr \[row2\] 1fr \[row3\] 
-  grid-template-areas: ". . . " ". mid . " ". . . "
-  height: 100vh
-  justify-items: center
-  position: absolute
-  width: 100%
+  align-items center
+  display grid
+  grid-template-columns  repeat(12, 1fr)
+  grid-template-rows   repeat(3, 1fr)
+  // grid-template-areas "c1r1 c2r1 c3r1 c4r1 c5r1"  "c1r2 c2r2 c3r2 c4r2 c5r2" "c1r3 c2r3 c3r3 c4r3 c5r3"
+  height 100vh
+  justify-items center
+  position absolute
+  width 100%
   &:nth-child(1)
-    background-image: linear-gradient(#000000, #0E0D3B)
+    background-image linear-gradient(#000000, #0E0D3B)
   &:nth-child(2)
-    background-image: linear-gradient(#0E0D3B, #2E1C54)
+    background-image linear-gradient(#0E0D3B, #2E1C54)
   &:nth-child(3)
-    background-image: linear-gradient(#2E1C54, #2D132C)
+    background-image linear-gradient(#2E1C54, #2D132C)
   &:nth-child(4)
-    background-image: linear-gradient(#2D132C, #801336)
+    background-image linear-gradient(#2D132C, #801336)
   &:nth-child(5)
-    background-image: linear-gradient( #801336, #C72C41)
+    background-image linear-gradient( #801336, #C72C41)
   &:nth-child(6)
-    background-image: linear-gradient( #C72C41, #EE4540)
+    background-image linear-gradient( #C72C41, #EE4540)
 
   & .brand
-    grid-area: mid
-    &>*
-      text-align: center
-    & img 
-      margin-top: 2rem
-      max-height: 1rem
-      &#arrow
-        animation-duration: 2s
-        animation-iteration-count: infinite
-        animation-name: bounce
-        animation-timing-function: ease-out
+    grid-column 5/9
+    grid-row 2
+    width 100%
     & h6
-      font-weight: lighter
-      font-size: .5rem
+      font-weight lighter
+      font-size .5rem
+    & img 
+      height 2rem
+    & .arrow
+      animation-duration 2s
+      animation-iteration-count infinite
+      animation-name bounce
+      animation-timing-function ease-out
+      cursor pointer
+      margin-top 2rem
+      max-height 1rem
+      & img
+        height 1rem
+        transition 0.25s ease 
+      &:hover
+        animation-play-state paused
+      &:hover img
+        transform scale(1.5)
+      
+  & .about
+    grid-column 2/8
+    grid-row 2
+   & p
+      font-size .5rem
+      margin-top 1.5rem
+      & b
+        color #C72C41
+        font-size .525rem
 
+.svg
+  & img 
+    width 35vh
+  &#space-ship
+    grid-column-start 2
+    grid-column-end 5
+  &#rocket
+    grid-column 8/12
+    grid-row 3
+  &#meteorite
+    grid-column 5/8
+    grid-row 1
+  &#meteorites
+    grid-column 9/12
+    grid-row 3
+  &#plane
+    grid-column 1/4
+    grid-row 3
+  &#cloud
+    grid-area c2r2
+  &#birds
+    grid-area c4r2
+  &#forest
+    background-image url('assets/Untitled-2.png')
+    grid-area bl/ c4r3/ br
+    width 100vw
+    height 50vh
+    & img 
+      position absolute
+      top 24%;
+      left -2%;
+      max-height 100vh
+      width 100%
 
 @keyframes bounce 
   0%
-    transform: translate(0px, 0px)
+    transform translate(0px, 0px)
   50%
-    transform: translate(0px, 5px)
+    transform translate(0px, 15px)
   100%
-    transform: translate(0px, 0px)
+    transform translate(0px, 0px)
 
-
-@media only screen and (max-aspect-ratio: 5/5) 
+@media only screen and (max-aspect-ratio 5/5) 
   body 
-    overflow: auto
+    overflow auto
   
 
 
