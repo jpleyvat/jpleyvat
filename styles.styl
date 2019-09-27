@@ -76,6 +76,19 @@ body
         color #C72C41
         font-size .525rem
 
+  & .projects
+    align-items center
+    display flex
+    justify-content space-around
+    position absolute
+    width 100vw
+    z-index 2
+    & .project
+      max-height 30vh
+      & img
+        border-radius 100%
+        cursor pointer
+        height 20vw
 .svg
   & img 
     width 35vh
@@ -95,20 +108,17 @@ body
     grid-column 1/4
     grid-row 3
   &#cloud
-    grid-area c2r2
+    grid-column 1/4
+    grid-row 2
   &#birds
-    grid-area c4r2
+    grid-column 10/12
   &#forest
-    background-image url('assets/Untitled-2.png')
-    grid-area bl/ c4r3/ br
-    width 100vw
-    height 50vh
+    overflow hidden
+    position absolute
+    bottom -5%
     & img 
-      position absolute
-      top 24%;
-      left -2%;
-      max-height 100vh
-      width 100%
+      min-width 100vw
+      height 60vh
 
 @keyframes bounce 
   0%
@@ -116,7 +126,6 @@ body
   50%
     transform translate(0px, 15px)
   100%
-    transform translate(0px, 0px)
 
 @media only screen and (max-aspect-ratio 5/5) 
   body 
