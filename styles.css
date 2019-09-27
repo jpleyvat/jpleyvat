@@ -16,7 +16,7 @@ body {
   bottom: 0;
   height: 100vh;
   position: relative;
-  width: 100%;
+  width: 100vw;
 }
 .page {
   align-items: center;
@@ -25,6 +25,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   height: 100vh;
   justify-items: center;
+  overflow: hidden;
   position: absolute;
   width: 100%;
 }
@@ -136,7 +137,6 @@ body {
   grid-column: 10/12;
 }
 .svg#forest {
-  overflow: hidden;
   position: absolute;
   bottom: -5%;
 }
