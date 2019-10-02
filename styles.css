@@ -12,6 +12,27 @@ body {
   position: relative;
   width: 100%;
 }
+.navigation {
+  display: flex;
+  flex-direction: column;
+  left: 95%;
+  position: fixed;
+  top: 35%;
+  z-index: 5;
+}
+.navigation ul {
+  width: 0.75rem;
+  list-style: none;
+  position: absolute;
+}
+.navigation ul li:hover img {
+  height: 0.75rem;
+}
+.navigation img {
+  cursor: pointer;
+  margin-top: 0.1rem;
+  height: 0.5rem;
+}
 .container {
   bottom: 0;
   height: 100vh;
