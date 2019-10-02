@@ -208,6 +208,12 @@ body {
   height: 60vh;
 }
 @media only screen and (max-aspect-ratio: 1/1) {
+  .page {
+    grid-row: 2;
+  }
+  .page .about {
+    grid-column: 4/10;
+  }
   .page .project .description {
     max-width: calc(20vh * 1.1);
   }
