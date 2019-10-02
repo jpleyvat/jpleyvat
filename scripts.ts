@@ -1,5 +1,8 @@
 dot(100);
 
+let touchStart;
+let touchEnd;
+
 let [pages, container, numberOfPages, currentPage]: any = [
 	document.getElementsByClassName('page'),
 	document.getElementById('container'),
@@ -17,8 +20,14 @@ document.addEventListener('wheel', (event) => {
 	}
 });
 
-document.addEventListener('touchmove', (event) => {
-	console.log(event);
+document.addEventListener('touchstart', (event) => {
+	touchStart = event.changedTouches[0].clientY;
+});
+
+document.addEventListener('touchend', (event) => {
+	touchEnd = event.changedTouches[0].clientY;
+	if (touchStart < touchEnd) scrollUp();
+	else if (touchStart > touchEnd) scrollDown();
 });
 
 let navigation: any;

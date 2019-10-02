@@ -1,4 +1,6 @@
 dot(100);
+var touchStart;
+var touchEnd;
 var _a = [
     document.getElementsByClassName('page'),
     document.getElementById('container'),
@@ -15,8 +17,15 @@ document.addEventListener('wheel', function (event) {
             scrollDown();
     }
 });
-document.addEventListener('touchmove', function (event) {
-    console.log(event);
+document.addEventListener('touchstart', function (event) {
+    touchStart = event.changedTouches[0].clientY;
+});
+document.addEventListener('touchend', function (event) {
+    touchEnd = event.changedTouches[0].clientY;
+    if (touchStart < touchEnd)
+        scrollUp();
+    else if (touchStart > touchEnd)
+        scrollDown();
 });
 var navigation;
 navigation = document.getElementsByClassName('navigation')[0]
