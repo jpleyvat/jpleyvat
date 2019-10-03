@@ -13,6 +13,23 @@ body {
   position: relative;
   width: 100%;
 }
+.contact {
+  display: flex;
+  float: right;
+  justify-content: flex-end;
+  margin-top: 0.2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.contact img {
+  cursor: pointer;
+  margin-right: 0.2rem;
+  height: 1rem;
+}
+.contact img :hover {
+  height: 1.2rem;
+}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -147,7 +164,7 @@ body {
 }
 .page .project .project-tools {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: absolute;
   width: 20vh;
 }

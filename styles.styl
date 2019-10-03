@@ -14,6 +14,22 @@ body
   position relative
   width 100%
 
+.contact
+  display flex
+  // flex-direction row-reverse
+  float right
+  justify-content flex-end
+  margin-top .2rem
+  position fixed
+  width 100%
+  z-index 2
+  & img
+    cursor pointer
+    margin-right .2rem
+    height 1rem
+    :hover
+      height 1.2rem
+
 .navigation
   display flex
   flex-direction column
@@ -140,7 +156,7 @@ body
 
     & .project-tools
       display flex
-      justify-content space-between
+      justify-content space-around
       position absolute
       width initial-project-image-size
       & img 
