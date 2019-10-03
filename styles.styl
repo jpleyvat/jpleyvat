@@ -1,6 +1,8 @@
 *
   box-sizing border-box
   color white
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size 3vw
   margin 0
   padding 0
@@ -22,13 +24,18 @@ body
   & ul
     width .75rem
     list-style none
-    position absolute
-    & li:hover img
-      height .75rem
+    position absolute 
+    & li
+      align-items center 
+      display flex
+      justify-content center
+      height .7rem
   & img 
     cursor pointer
-    margin-top .1rem
+    // margin-top .1rem
     height .5rem
+    &:hover
+      height .6rem
 
 .container
   bottom 0
@@ -39,8 +46,10 @@ body
 .page
   align-items center
   display grid
-  grid-template-columns  repeat(12, 1fr)
-  grid-template-rows   repeat(3, 1fr)
+  // grid-template-columns  repeat(12, 1fr)
+  grid-template-columns  repeat(12, calc(100vw/12))
+  // grid-template-rows   repeat(3, 1fr)
+  grid-template-rows   repeat(3, calc(100vh/3))
   height 100vh
   justify-items center
   overflow hidden
@@ -121,7 +130,9 @@ body
       opacity 0
       padding .5rem
       transition 1s transform ease, opacity 1s ease
-      width "calc(%s *1.6)" % initial-project-image-size
+      // width "calc(%s *1.75)" % initial-project-image-size
+      // & h1
+      //   color #C72C41
       & p
         margin-top .25rem
       & img 
@@ -192,12 +203,13 @@ body
     transform translate(0px, 15px)
   100%
 
-@media only screen and (max-aspect-ratio 1/1) 
+@media only screen and (max-aspect-ratio 4/3) 
   initial-project-image-size = 20vh
   .page
     & .about
-       grid-column 4/10
+      grid-column 4/10
       grid-row 2
+
     & .project
       & .description
         max-width "calc(%s * 1.1)" % initial-project-image-size
