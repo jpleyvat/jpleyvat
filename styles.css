@@ -152,12 +152,18 @@ body {
   background-color: #fa8072;
   border-radius: 10%;
   margin-left: -9999px;
+  min-width: 20vw;
   opacity: 0;
   padding: 0.5rem;
   transition: 1s transform ease, opacity 1s ease;
 }
 .page .project .description p {
   margin-top: 0.25rem;
+}
+.page .project .description p a {
+  color: #c72c41;
+  text-decoration: none;
+  font-size: inherit;
 }
 .page .project .description img {
   height: calc(20vh / 5);
@@ -188,7 +194,7 @@ body {
 .page .project:hover .description {
   margin-left: 0;
   opacity: 1;
-  transform: translate(120%);
+  transform: translate(110%);
   z-index: 3;
 }
 .svg img {

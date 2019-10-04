@@ -142,7 +142,8 @@ body
     & .description
       background-color salmon
       border-radius 10%
-      margin-left: -9999px
+      margin-left -9999px
+      min-width 20vw
       opacity 0
       padding .5rem
       transition 1s transform ease, opacity 1s ease
@@ -151,6 +152,10 @@ body
       //   color #C72C41
       & p
         margin-top .25rem
+        & a
+          color #C72C41
+          text-decoration none
+          font-size inherit
       & img 
         height "calc(%s / 5)" % initial-project-image-size
 
@@ -179,7 +184,7 @@ body
     &:hover .description
         margin-left: 0
         opacity 1
-        transform translate(120%)
+        transform translate(110%)
         z-index 3
       
 .svg
