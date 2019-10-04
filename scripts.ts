@@ -1,13 +1,22 @@
 dot(100);
 
-let touchStart;
-let touchEnd;
+let touchStart, touchEnd;
 
-let [pages, container, numberOfPages, currentPage]: any = [
+let [
+	currentPage,
+	pages,
+	container,
+	numberOfPages,
+	navigation,
+	contactMe
+]: any = [
+	1,
 	document.getElementsByClassName('page'),
 	document.getElementById('container'),
 	document.getElementsByClassName('page').length,
-	1
+	document.getElementsByClassName('navigation')[0].children[0]
+		.children,
+	document.getElementsByClassName('contact')[0].children[2]
 ];
 
 for (let i = 0; i < pages.length; i++)
@@ -30,9 +39,20 @@ document.addEventListener('touchend', (event) => {
 	else if (touchStart > touchEnd) scrollDown();
 });
 
-let navigation: any;
-navigation = document.getElementsByClassName('navigation')[0]
-	.children[0].children;
+contactMe.addEventListener('click', (event) => {
+	let animation = setInterval(frame, 2);
+	dot(600);
+	function frame() {
+		if (getpPropertyValue(container.style.bottom) === 500) {
+			clearInterval(animation);
+		} else {
+			container.style.bottom = modifyPorperty(
+				container.style.bottom,
+				10
+			);
+		}
+	}
+});
 
 for (let i = 0; i < navigation.length; i++) {
 	navigation[i].children[0].addEventListener('click', (event) => {

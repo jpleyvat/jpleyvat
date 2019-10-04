@@ -1,12 +1,14 @@
 dot(100);
-var touchStart;
-var touchEnd;
+var touchStart, touchEnd;
 var _a = [
+    1,
     document.getElementsByClassName('page'),
     document.getElementById('container'),
     document.getElementsByClassName('page').length,
-    1
-], pages = _a[0], container = _a[1], numberOfPages = _a[2], currentPage = _a[3];
+    document.getElementsByClassName('navigation')[0].children[0]
+        .children,
+    document.getElementsByClassName('contact')[0].children[2]
+], currentPage = _a[0], pages = _a[1], container = _a[2], numberOfPages = _a[3], navigation = _a[4], contactMe = _a[5];
 for (var i = 0; i < pages.length; i++)
     pages[i].style.top = String(i * 100) + '%';
 document.addEventListener('wheel', function (event) {
@@ -27,9 +29,18 @@ document.addEventListener('touchend', function (event) {
     else if (touchStart > touchEnd)
         scrollDown();
 });
-var navigation;
-navigation = document.getElementsByClassName('navigation')[0]
-    .children[0].children;
+contactMe.addEventListener('click', function (event) {
+    var animation = setInterval(frame, 2);
+    dot(600);
+    function frame() {
+        if (getpPropertyValue(container.style.bottom) === 500) {
+            clearInterval(animation);
+        }
+        else {
+            container.style.bottom = modifyPorperty(container.style.bottom, 10);
+        }
+    }
+});
 for (var i = 0; i < navigation.length; i++) {
     navigation[i].children[0].addEventListener('click', function (event) {
         var pageNumber = Number(event.target.id.replace('dot', ''));
