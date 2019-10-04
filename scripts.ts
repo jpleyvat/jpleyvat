@@ -102,7 +102,7 @@ function scrollUp() {
 			} else {
 				container.style.bottom = modifyPorperty(
 					container.style.bottom,
-					-1
+					-2
 				);
 			}
 		}
@@ -128,7 +128,7 @@ function scrollDown() {
 			} else {
 				container.style.bottom = modifyPorperty(
 					container.style.bottom,
-					1
+					2
 				);
 			}
 		}

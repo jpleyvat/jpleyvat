@@ -77,7 +77,7 @@ function scrollUp() {
                 clearInterval(animation_1);
             }
             else {
-                container.style.bottom = modifyPorperty(container.style.bottom, -1);
+                container.style.bottom = modifyPorperty(container.style.bottom, -2);
             }
         }
     }
@@ -96,7 +96,7 @@ function scrollDown() {
                 clearInterval(animation_2);
             }
             else {
-                container.style.bottom = modifyPorperty(container.style.bottom, 1);
+                container.style.bottom = modifyPorperty(container.style.bottom, 2);
             }
         }
     }
