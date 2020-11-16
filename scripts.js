@@ -29,17 +29,16 @@ document.addEventListener('touchend', function (event) {
     else if (touchStart > touchEnd)
         scrollDown();
 });
-contactMe.addEventListener('click', function (event) {
-    var animation = setInterval(frame, 2);
-    dot(600);
-    function frame() {
+contactMe.addEventListener('click', function () {
+    var animation = setInterval(function () {
         if (getpPropertyValue(container.style.bottom) === 500) {
             clearInterval(animation);
         }
         else {
             container.style.bottom = modifyPorperty(container.style.bottom, 10);
         }
-    }
+    }, 2);
+    dot(600);
 });
 for (var i = 0; i < navigation.length; i++) {
     navigation[i].children[0].addEventListener('click', function (event) {
@@ -47,12 +46,7 @@ for (var i = 0; i < navigation.length; i++) {
         var operation = 1;
         if (currentPage > pageNumber)
             operation = -1;
-        var animation = setInterval(frame, 2);
-        var initialPosition = getpPropertyValue(container.style.bottom);
-        var interval = (Math.abs(initialPosition - (pageNumber - 1) * 100) *
-            operation) /
-            100;
-        function frame() {
+        var animation = setInterval(function () {
             if (getpPropertyValue(container.style.bottom) ===
                 (pageNumber - 1) * 100) {
                 clearInterval(animation);
@@ -61,7 +55,11 @@ for (var i = 0; i < navigation.length; i++) {
             else {
                 container.style.bottom = modifyPorperty(container.style.bottom, interval);
             }
-        }
+        }, 2);
+        var initialPosition = getpPropertyValue(container.style.bottom);
+        var interval = (Math.abs(initialPosition - (pageNumber - 1) * 100) *
+            operation) /
+            100;
     });
 }
 function scrollUp() {
@@ -69,8 +67,7 @@ function scrollUp() {
     if (container.style.bottom != '' &&
         container.style.bottom != '0%') {
         dot(initialPosition);
-        var animation_1 = setInterval(frame, 2);
-        function frame() {
+        var animation_1 = setInterval(function () {
             if (getpPropertyValue(container.style.bottom) ===
                 initialPosition - 100 ||
                 getpPropertyValue(container.style.bottom) <= 0) {
@@ -79,7 +76,7 @@ function scrollUp() {
             else {
                 container.style.bottom = modifyPorperty(container.style.bottom, -2);
             }
-        }
+        }, 1);
     }
 }
 function scrollDown() {
@@ -87,8 +84,7 @@ function scrollDown() {
     if (getpPropertyValue(container.style.bottom) <=
         numberOfPages * 100 - 200) {
         dot(initialPosition + 200);
-        var animation_2 = setInterval(frame, 2);
-        function frame() {
+        var animation_2 = setInterval(function () {
             if (getpPropertyValue(container.style.bottom) ===
                 initialPosition + 100 ||
                 getpPropertyValue(container.style.bottom) >
@@ -96,9 +92,9 @@ function scrollDown() {
                 clearInterval(animation_2);
             }
             else {
-                container.style.bottom = modifyPorperty(container.style.bottom, 2);
+                container.style.bottom = modifyPorperty(container.style.bottom, 1);
             }
-        }
+        }, 1);
     }
 }
 function modifyPorperty(initial, value) {
