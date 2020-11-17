@@ -128,12 +128,12 @@ body {
   grid-column: 2/8;
   grid-row: 2;
 }
-.page p {
+.page .about p {
   font-size: 0.5rem;
   margin-top: 1.5rem;
 }
-.page p b {
-  color: #88292f;
+.page .about p b {
+  color: #c72c41;
   font-size: 0.525rem;
 }
 .page .project-container {
@@ -144,49 +144,66 @@ body {
   justify-content: center;
 }
 .page .project-container img.project-image {
-  border-radius: 30%;
+  border-radius: 1%;
   cursor: pointer;
   height: 20vh;
   position: absolute;
   transition: transform 0.25s ease, border-radius 0.5s ease;
 }
 .page .project-container .description {
-  background-color: #a27e8e;
+  background-color: #c72c41;
   border-radius: 1%;
   margin-left: -9999px;
-  min-width: 20vw;
   opacity: 0;
-  padding: 0.6rem 0.2rem;
   transition: 0.25s transform ease, opacity 1s ease;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 20%, 80% 0);
-  width: 20vh;
+  width: calc(20vh * 1.4);
 }
-.page .project-container .description h1 {
-  font-size: 0.8rem;
-  color: #c5c8c6;
+.page .project-container .description .tittle {
+  background-color: #0e0d3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 100%;
+}
+.page .project-container .description .tittle h1 {
+  color: #c72c41;
+  font-size: 0.5rem;
+  text-align: center;
+}
+.page .project-container .description .tools {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 1.75rem;
+}
+.page .project-container .description .tools img {
+  margin: 0.1rem;
 }
 .page .project-container .description p {
   font-size: 0.4rem;
   color: #c5c8c6;
-  margin-top: 0.1rem;
+  padding: 0.5rem;
+  text-align: justify;
 }
+.page .project-container .description p b,
 .page .project-container .description p a {
-  color: #88292f;
+  color: #0e0d3b;
   text-decoration: none;
   font-size: inherit;
 }
 .page .project-container .description img {
-  height: calc(20vh / 5);
+  height: calc(20vh / 6);
 }
-.page .project-container .project-tools {
+.page .project-container .tools {
   display: flex;
   justify-content: space-around;
   position: absolute;
   width: 20vh;
 }
-.page .project-container .project-tools img {
-  height: calc(20vh / 4);
+.page .project-container .tools img {
+  height: calc(20vh / 7);
 }
 .page .project-container:nth-child(1) {
   grid-column: 2/4;

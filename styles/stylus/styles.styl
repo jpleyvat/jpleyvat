@@ -1,20 +1,18 @@
 font-color = #C5C8C6
+highlight-color-1 = color-6
+highlight-color-2 = color-2
 
-gradient-color-1 = #000000
-gradient-color-2 = #0E0D3B
-gradient-color-3 = #2E1C54
-gradient-color-4 = #2D132C
-gradient-color-5 = #801336
-gradient-color-6 = #C72C41
-gradient-color-7 = #EE4540
+color-1 = #000000
+color-2 = #0E0D3B
+color-3 = #2E1C54
+color-4 = #2D132C
+color-5 = #801336
+color-6 = #C72C41
+color-7 = #EE4540
 
-color-1 = #A2A79E
-color-2 = #A27E8E
-color-3 = #A77464
-color-4 = #88292F
 
-description-background-color = color-2
-highlight-color = color-4
+description-tittle-background-color = color-2
+description-background-color = color-6
 description-text-color = font-color
 
 *
@@ -92,17 +90,17 @@ body
   position absolute
   width 100%
   &:nth-child(1)
-    background-image linear-gradient(gradient-color-1, gradient-color-2)
+    background-image linear-gradient(color-1, color-2)
   &:nth-child(2)
-    background-image linear-gradient(gradient-color-2, gradient-color-3)
+    background-image linear-gradient(color-2, color-3)
   &:nth-child(3)
-    background-image linear-gradient(gradient-color-3, gradient-color-4)
+    background-image linear-gradient(color-3, color-4)
   &:nth-child(4)
-    background-image linear-gradient(gradient-color-4, gradient-color-5)
+    background-image linear-gradient(color-4, color-5)
   &:nth-child(5)
-    background-image linear-gradient( gradient-color-5, gradient-color-6)
+    background-image linear-gradient( color-5, color-6)
   &:nth-child(6)
-    background-image linear-gradient( gradient-color-6, gradient-color-7)
+    background-image linear-gradient( color-6, color-7)
 
   & .brand
     grid-column 5/9
@@ -137,12 +135,12 @@ body
     grid-column 2/8
     grid-row 2
 
-   & p
+    & p
       font-size .5rem
       margin-top 1.5rem
 
       & b
-        color highlight-color
+        color highlight-color-1
         font-size .525rem
 
   initial-project-image-size = 20vh
@@ -153,46 +151,65 @@ body
     grid-row 2
     justify-content center
     & img.project-image  
-      border-radius 30%
+      border-radius 1%
       cursor pointer
       height initial-project-image-size
       position absolute
       transition transform .25s ease, border-radius .5s ease
 
     & .description
+      // background-image linear-gradient(#000000, description-background-color)
       background-color description-background-color
       border-radius 1%
       margin-left -9999px
-      min-width 20vw
+      // min-width 20vh
       opacity 0
-      padding .6rem .2rem
+      // padding .3rem .5rem
       transition .25s transform ease, opacity 1s ease
-      -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
-      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 20%, 80% 0);
-      width initial-project-image-size
+      
+      width "calc(%s * 1.4)" % initial-project-image-size
       // & h1
-      //   color highlight-color
-      & h1
-        font-size .8rem
-        color description-text-color
+      //   color highlight-color-2
+      & .tittle
+        background-color description-tittle-background-color
+        display flex
+        justify-content center
+        align-items center
+        height 2rem
+        width 100%
+        & h1
+          color highlight-color-1
+          font-size .5rem
+          text-align center
+      & .tools
+        position absolute
+        display flex
+        justify-content center 
+        width 100%
+        top 1.75rem
+        & img
+          margin .1rem
+          
       & p
         font-size .4rem
         color description-text-color
-        margin-top .1rem
-        & a
-          color highlight-color
+        // margin-top .5rem
+        padding .5rem
+        text-align justify
+        & b, a
+          color highlight-color-2
           text-decoration none
           font-size inherit
       & img 
-        height "calc(%s / 5)" % initial-project-image-size
+        height "calc(%s / 6)" % initial-project-image-size
 
-    & .project-tools
+    & .tools
       display flex
       justify-content space-around
       position absolute
       width initial-project-image-size
       & img 
-        height "calc(%s / 4)" % initial-project-image-size
+        height "calc(%s / 7)" % initial-project-image-size
 
     &:nth-child(1)
       grid-column 2/4
