@@ -1,7 +1,4 @@
 font-color = #C5C8C6
-highlight-color-1 = color-6
-highlight-color-2 = color-2
-
 color-1 = #000000
 color-2 = #0E0D3B
 color-3 = #2E1C54
@@ -10,6 +7,8 @@ color-5 = #801336
 color-6 = #C72C41
 color-7 = #EE4540
 
+highlight-color-1 = color-6
+highlight-color-2 = color-2
 
 description-tittle-background-color = color-2
 description-background-color = color-6
@@ -80,9 +79,7 @@ body
 .page
   align-items center
   display grid
-  // grid-template-columns  repeat(12, 1fr)
   grid-template-columns  repeat(12, calc(100vw/12))
-  // grid-template-rows   repeat(3, 1fr)
   grid-template-rows   repeat(3, calc(100vh/3))
   height 100vh
   justify-items center
@@ -158,48 +155,48 @@ body
       transition transform .25s ease, border-radius .5s ease
 
     & .description
-      // background-image linear-gradient(#000000, description-background-color)
       background-color description-background-color
       border-radius 1%
       margin-left -9999px
-      // min-width 20vh
       opacity 0
-      // padding .3rem .5rem
       transition .25s transform ease, opacity 1s ease
-      
       width "calc(%s * 1.4)" % initial-project-image-size
-      // & h1
-      //   color highlight-color-2
       & .tittle
+        align-items center
         background-color description-tittle-background-color
         display flex
-        justify-content center
-        align-items center
         height 2rem
+        justify-content center
         width 100%
         & h1
           color highlight-color-1
           font-size .5rem
           text-align center
+
       & .tools
-        position absolute
         display flex
         justify-content center 
+        position absolute
+        top 1.6rem
         width 100%
-        top 1.75rem
         & img
+          background-color white
           margin .1rem
+          height .8rem
+          padding .07rem
+          width .8rem
           
       & p
-        font-size .4rem
         color description-text-color
-        // margin-top .5rem
+        font-size .4rem
+        margin-top .5rem
         padding .5rem
         text-align justify
         & b, a
           color highlight-color-2
-          text-decoration none
           font-size inherit
+          text-decoration none
+
       & img 
         height "calc(%s / 6)" % initial-project-image-size
 
@@ -207,9 +204,18 @@ body
       display flex
       justify-content space-around
       position absolute
+      top 60%
       width initial-project-image-size
-      & img 
-        height "calc(%s / 7)" % initial-project-image-size
+      & img
+        height 0.8rem
+        width 0.8rem
+
+    & .tools > img 
+      align-items center
+      border-radius 100%
+      display flex
+      justify-content center
+      padding .07rem
 
     &:nth-child(1)
       grid-column 2/4
@@ -222,14 +228,14 @@ body
 
     &:hover img.project-image
       border-radius 0
-      transform scale(1.3)
+      transform scale(1.5)
       z-index 2
 
     &:hover .description
-        margin-left: 1rem
-        opacity 1
-        transform translate(100%)
-        z-index 3
+      margin-left: 2rem
+      opacity 1
+      transform translate(100%)
+      z-index 3
       
   & .form
     grid-column 5/9
@@ -346,8 +352,6 @@ body
     & .project-container
       & .description
         border-radius 10%
-        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0%, 100% 0);
-        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0%, 100% 0);
         max-width "calc(%s * 1.1)" % initial-project-image-size
         & p
           font-size .6rem
@@ -381,10 +385,3 @@ body
 
     & .form
       grid-column 3/11
-    
-  .svg
-  	&#forest
-      bottom -1%
-      & img 
-        min-width 100vw
-        height 60vw
