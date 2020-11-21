@@ -159,21 +159,27 @@ body
       & img
         height 1rem
         transition 0.25s ease
-
       &:hover
         animation-play-state paused
-
       &:hover img
         transform scale(1.5)
 
   & .about
     grid-column 4/16
     grid-row 2
-
+    animation-play-state paused
+    & h3
+      animation dropdown .5s 1s
+      animation-fill-mode forwards
+      animation-play-state paused
+      opacity 0
     & p
+      animation dropdown 1s
+      animation-play-state paused
+      animation-fill-mode forwards
       font-size .5rem
       margin-top 1.5rem
-
+      opacity 0
       & b
         color highlight-color-1
         font-size .525rem
@@ -264,13 +270,25 @@ body
       padding .07rem
 
     &:nth-child(1)
+      animation dropdown .5s .5s
+      animation-fill-mode forwards
+      animation-play-state paused
       grid-column 4/8
+      opacity 0
 
     &:nth-child(2)
+      animation dropup .5s .5s
+      animation-fill-mode forwards
+      animation-play-state paused
       grid-column 9/13
+      opacity 0
 
     &:nth-child(3)
+      animation dropdown .55s .5s
+      animation-fill-mode forwards
+      animation-play-state paused
       grid-column 14/18
+      opacity 0
 
     &:hover img.project-image
       border-radius 0
@@ -434,10 +452,18 @@ body
 @keyframes dropdown
   0%
     opacity 1
-    transform translate(0, -100%)
+    transform translate(0, -100vh)
   100%
     opacity 1
     transform translate(0,0)
+
+@keyframes dropup
+  0%
+    opacity 1
+    transform translate(0, 100vh)
+  100%
+    opacity 1
+    transform translate(0, 0)
 
 @keyframes appear
   0%
@@ -457,6 +483,21 @@ body
   100%
     transform rotate(0deg)
 
+@keyframes slide_right
+  0%
+    opacity 1
+    transform translate(-100vw, 0)
+  100%
+    opacity 1
+    transform translate(0, 0)
+
+@keyframes slide_left
+  0%
+    opacity 1
+    transform translate(100vw, 0)
+  100%
+    opacity 1
+    transform translate(0, 0)
 
 @media only screen and (max-aspect-ratio 4/3)
   initial-project-image-size = 20vh
@@ -474,7 +515,7 @@ body
       & h1
         font-size 1.5rem
     & .about
-      grid-column 8/20
+      grid-column 6/20
       grid-row 2
 
     & .project-container
@@ -496,14 +537,23 @@ body
         border-radius 100%
 
       &:nth-child(1)
+        animation slide_right .25s .25s
+        animation-fill-mode forwards
+        animation-play-state paused
         grid-column 13
         grid-row 1
 
       &:nth-child(2)
+        animation slide_left .25s .5s
+        animation-fill-mode forwards
+        animation-play-state paused
         grid-column 13
         grid-row 2
 
       &:nth-child(3)
+        animation slide_right .25s .75s
+        animation-fill-mode forwards
+        animation-play-state paused
         grid-column 13
         grid-row 3
 
