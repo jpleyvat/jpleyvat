@@ -175,7 +175,7 @@ body {
   opacity: 0;
 }
 .page .about p {
-  animation: dropdown 1s;
+  animation: dropup 1s 0.25s;
   animation-play-state: paused;
   animation-fill-mode: forwards;
   font-size: 0.5rem;
@@ -384,6 +384,8 @@ body {
   grid-column-start: 4;
   grid-column-end: 10;
   opacity: 0;
+  position: relative;
+  z-index: 3;
 }
 .svg#rocket {
   grid-column: 16/24;
