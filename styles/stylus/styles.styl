@@ -32,10 +32,12 @@ body
 
 .contact
   align-items center
+  animation appear 6s ease 3s normal 1 forwards
   display flex
   float right
   justify-content flex-end
   margin-top .2rem
+  opacity 0
   position fixed
   width 100%
   z-index 2
@@ -48,9 +50,11 @@ body
     height 1rem
 
 .navigation
+  animation appear 6s ease 2s normal 1 forwards
   display flex
   flex-direction column
   left 95%
+  opacity 0
   position fixed
   top 37.5%
   z-index 2
@@ -109,7 +113,7 @@ body
     width 100%
     brand_animation_duration = 12s
     & h1
-        color #070720
+        color #06051A
         font-size 2rem
         position relative
         &::before
@@ -143,13 +147,12 @@ body
 
 
     & img
-      height 2rem
+        animation appear 5s 1s 1 normal ease forwards
+        height 2rem
+        opacity 0
 
     & .arrow
-      animation-duration 2s
-      animation-iteration-count infinite
-      animation-name bounce
-      animation-timing-function ease-out
+      animation bounce 2s ease-out 0s normal infinite
       cursor pointer
       margin-top 2rem
       max-height 1rem
@@ -344,8 +347,10 @@ body
   & img
     width 25vh
   &#space-ship
+    animation dropdown .75s cubic-bezier(0,1.36,.77,1.9) 1.5s normal 1 forwards, reel 6s linear 2.25s normal infinite
     grid-column-start 4
     grid-column-end 10
+    opacity 0
   &#rocket
     grid-column 16/24
     grid-row 3
@@ -426,6 +431,33 @@ body
   60%, 95%
     width 100%
 
+@keyframes dropdown
+  0%
+    opacity 1
+    transform translate(0, -100%)
+  100%
+    opacity 1
+    transform translate(0,0)
+
+@keyframes appear
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+@keyframes reel
+  0%
+    transform rotate(0deg)
+  25%
+    transform rotate(10deg)
+  50%
+    transform rotate(0deg)
+  75%
+    transform rotate(-10deg)
+  100%
+    transform rotate(0deg)
+
+
 @media only screen and (max-aspect-ratio 4/3)
   initial-project-image-size = 20vh
   *
@@ -438,6 +470,9 @@ body
       height 1.5rem
 
   .page
+    & .brand
+      & h1
+        font-size 1.5rem
     & .about
       grid-column 8/20
       grid-row 2
