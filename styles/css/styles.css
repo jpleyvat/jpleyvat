@@ -421,6 +421,19 @@ body {
     margin-right: 0.5rem;
     height: 1.5rem;
   }
+  .navigation {
+    display: hidden;
+  }
+  ul {
+    left: 0.1rem;
+  }
+  ul li {
+    margin: 1rem;
+  }
+  ul img,
+  ul .dot {
+    height: 1rem;
+  }
   .page .brand h1 {
     font-size: 1.5rem;
   }
