@@ -283,7 +283,7 @@ body {
   animation: dropdown 0.5s 0.5s;
   animation-fill-mode: forwards;
   animation-play-state: paused;
-  grid-column: 4/8;
+  grid-column: 14/18;
   opacity: 0;
 }
 .page .project-container:nth-child(2) {
@@ -297,7 +297,7 @@ body {
   animation: dropdown 0.55s 0.5s;
   animation-fill-mode: forwards;
   animation-play-state: paused;
-  grid-column: 14/18;
+  grid-column: 4/8;
   opacity: 0;
 }
 .page .project-container:hover img.project-image {
@@ -449,7 +449,7 @@ body {
     border-radius: 100%;
   }
   .page .project-container:nth-child(1) {
-    animation: slide_right 0.25s 0.25s;
+    animation: slide_right 0.25s 0.75s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
     grid-column: 13;
@@ -463,7 +463,7 @@ body {
     grid-row: 2;
   }
   .page .project-container:nth-child(3) {
-    animation: slide_right 0.25s 0.75s;
+    animation: slide_right 0.25s 0.25s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
     grid-column: 13;
