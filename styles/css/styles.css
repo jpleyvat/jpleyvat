@@ -453,7 +453,7 @@ body {
     animation-fill-mode: forwards;
     animation-play-state: paused;
     grid-column: 13;
-    grid-row: 1;
+    grid-row: 3;
   }
   .page .project-container:nth-child(2) {
     animation: slide_left 0.25s 0.5s;
@@ -467,7 +467,7 @@ body {
     animation-fill-mode: forwards;
     animation-play-state: paused;
     grid-column: 13;
-    grid-row: 3;
+    grid-row: 1;
   }
   .page .project-container:hover img.project-image {
     border-radius: 0;
